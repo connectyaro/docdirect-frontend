@@ -1,9 +1,7 @@
-import AppShell from "./Appshell"
-
+import { Outlet } from "react-router";
 
 export function App() {
-
-  return  <AppShell />
+  return <Outlet />;
 }
 
-export  default App
+export default App;
