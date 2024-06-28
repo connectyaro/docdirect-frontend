@@ -10,14 +10,7 @@ function ProtectedRoutes({ Children }: any) {
   const role = localStorage.getItem("role");
 
   useEffect(() => {
-    if (
-      !isAuthenticated &&
-      (location.pathname === "/" || location.pathname.includes("home"))
-    ) {
-      return navigate("/home");
-    } else if (!isAuthenticated) {
-      return navigate("/login");
-    } else if (isAuthenticated) {
+    if (isAuthenticated) {
       switch (role) {
         case "user":
           return navigate("/clinic-list");
@@ -26,6 +19,8 @@ function ProtectedRoutes({ Children }: any) {
         case "admin":
           return navigate("/admin");
       }
+    } else {
+      return navigate("/home");
     }
   }, [isAuthenticated, location.pathname, navigate, role]);
 

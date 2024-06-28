@@ -1,7 +1,8 @@
-import { Outlet } from "react-router";
+
+import { Master } from "./core/components/Master";
 
 export function App() {
-  return <Outlet />;
+  return <Master/>
 }
 
 export default App;
