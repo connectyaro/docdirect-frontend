@@ -16,7 +16,12 @@ import {
   Stack,
   Flex,
   Image,
+  BackgroundImage,
+  SimpleGrid,
+  Center,
 } from "@mantine/core";
+import bkg from "../../../assets/bg-image.png";
+import docImge from "../../../assets/hero_img 1.png";
 import { Link } from "react-router-dom";
 
 function Register() {
@@ -40,15 +45,15 @@ function Register() {
   });
 
   return (
-    <Flex align="center" justify="center" h="100%">
-      <Paper h="500PX" w="400" style={{ overflow: 'auto' }}>
-        <Image
-          width="100%"
-          height="100%"
-          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
+  <BackgroundImage src={bkg} h={"100%"}>
+      <Flex align="center" justify="center" h="100%">
+      <SimpleGrid cols={2} bg={"white"} >
+      <Paper w={"500px"} bg={"#b9d8f4"}>
+        <Image mt={"40px"}
+          src={docImge} alt="Image"
         />
       </Paper>
-      <Paper radius="md" p="xl">
+      <Paper radius="md" pt={"lg"} pb={"lg"} pr={"lg"}>
         <Text size="lg" fw={700}>
           Sign Up
         </Text>
@@ -140,17 +145,22 @@ function Register() {
               leftSection={<IconLock stroke={1} />}
             />
           </Stack>
-          <Group justify="space-between" mt="xl">
+          <Group  mt="xl">
             <Button type="submit" w="100% " radius="sm">
               SIGN IN
             </Button>
-            <Anchor component="button" type="button" c="dimmed" size="xs">
-              Already have an account? <Link  to={"/login"}>Sign in here</Link>
+          <Center>
+          <Anchor component="button" type="button" c="dimmed" size="xs">
+              Already have an account? <Link to={"/login"}>Sign in here</Link>
             </Anchor>
+          </Center>
           </Group>
         </form>
       </Paper>
+        </SimpleGrid>
+     
     </Flex>
+  </BackgroundImage>
   );
 }
 

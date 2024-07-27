@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router";
 function ProtectedRoutes({ Children }: any) {
   const location = useLocation();
   const navigate = useNavigate();
-  const isAuthenticated = false;
+  const isAuthenticated = true;
   // eslint-disable-next-line prefer-const
   const role = localStorage.getItem("role");
 
@@ -13,7 +13,7 @@ function ProtectedRoutes({ Children }: any) {
     if (isAuthenticated) {
       switch (role) {
         case "user":
-          return navigate("/clinic-list");
+          return navigate("/clinic");
         case "doctor":
           return navigate("/doctor");
         case "admin":

@@ -8,7 +8,7 @@ import "./index.css"
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <MantineProvider theme={theme} cssVariablesResolver={resolver}>
-      <Router />
+        <Router />
     </MantineProvider>
   </React.StrictMode>
 );

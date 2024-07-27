@@ -9,3 +9,9 @@ export interface IBase<T> {
   Data: T;
   ApiResponse: IApiResponse;
 }
+export interface IBase<T> {
+  Status: boolean;
+  Message: string;
+  Data: T;
+  ApiResponse: IApiResponse;
+}

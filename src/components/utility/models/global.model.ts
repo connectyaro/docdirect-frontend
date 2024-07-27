@@ -9,3 +9,8 @@ export interface IBase<T> {
   Data: T;
   ApiResponse: IApiResponse;
 }
+ 
+export interface ICustomeButtonProps {
+  label: string;
+  url?:string
+}
